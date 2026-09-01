@@ -1,0 +1,3 @@
+@echo off
+echo Starting Exercise 2: Worker Progress Report...
+start index.html

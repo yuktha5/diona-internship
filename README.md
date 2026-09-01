@@ -188,44 +188,9 @@ wcb-expense-pdf-app/
 
 ---
 
-## 🚀 Pushing to GitHub
 
-To push this project to your GitHub account:
 
-### Step 1: Initialize Git and Create Local Commit
-Open a terminal in the project directory:
-```bash
-# Navigate to the project directory
-cd C:\Users\hp\.gemini\antigravity\scratch\wcb-expense-pdf-app
 
-# Initialize git
-git init
-
-# Stage all project files
-git add .
-
-# Create initial commit
-git commit -m "feat: complete WCB Manitoba dynamic PDF claims suite with AI & Video hub"
-```
-
-### Step 2: Create a New Repository on GitHub
-1. Log in to [GitHub](https://github.com).
-2. Click **New Repository** (or visit [github.com/new](https://github.com/new)).
-3. Name your repository (e.g. `wcb-manitoba-pdf-suite`).
-4. Keep it **Public** and **do not** check "Initialize with README".
-5. Click **Create repository**.
-
-### Step 3: Link Remote and Push
-```bash
-# Rename branch to main
-git branch -M main
-
-# Link to your new GitHub repository (replace with your repo URL)
-git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPOSITORY_NAME>.git
-
-# Push your code
-git push -u origin main
-```
 
 ---
 

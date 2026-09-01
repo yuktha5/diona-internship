@@ -90,7 +90,9 @@ diona-internship-git-main-yuktha1ga23is119-5153s-projects.vercel.app
 # In the project directory:
 npx -y serve -l 3000 .
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Openfile:/// C:/Users/hp/Desktop/6%20sem/Worker%20Progress%20Report%20dia.pdf 
+
+in your browser.
 
 ### Method 5: VS Code Live Server
 Right-click `index.html` inside VS Code and select **Open with Live Server**.

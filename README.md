@@ -1,8 +1,8 @@
 # Workers Compensation Board of Manitoba (WCB) - Dynamic PDF Claims & Reporting Suite
 
 A high-fidelity, dynamic web application engineered with pure **HTML5, CSS3, and modern Vanilla JavaScript (ES6+)** that reproduces the official forms of the **Workers Compensation Board of Manitoba (WCB)**:
-1. **Exercise 1: Medical & Travel Expense Request** (2-Page Reference PDF)
-2. **Exercise 2: Worker Progress Report (WP)** (3-Page Reference PDF)
+1. **Exercise 1: Medical & Travel Expense Request**
+2. **Exercise 2: Worker Progress Report (WP)** 
 
 ---
 
@@ -16,7 +16,7 @@ A high-fidelity, dynamic web application engineered with pure **HTML5, CSS3, and
 7. [🎥 Video Hub & Webcam Video Check-in Recorder](#-video-hub--webcam-video-check-in-recorder)
 8. [Dynamic Data & Multi-Dataset Demonstrations](#-dynamic-data--multi-dataset-demonstrations)
 9. [Architecture & Project Structure](#-architecture--project-structure)
-10. [Pushing to GitHub](#-pushing-to-github)
+
 
 ---
 

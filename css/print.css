@@ -1,0 +1,83 @@
+/* ==========================================================================
+   PRINT STYLESHEET (@media print)
+   Standard Letter Page Dimensions: 8.5in x 11in
+   ========================================================================== */
+
+@page {
+  size: letter portrait;
+  margin: 0;
+}
+
+@media print {
+  /* Hide all app chrome and toolbars */
+  .app-header,
+  .exercise-nav-bar,
+  .sidebar-drawer,
+  .toast-msg,
+  .zoom-controls,
+  .btn-add-item,
+  .btn-remove-item {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .app-main,
+  .preview-stage,
+  .page-wrapper-scale,
+  .document-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #ffffff !important;
+    transform: none !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .pdf-page {
+    width: 8.5in !important;
+    min-height: 11in !important;
+    height: 11in !important;
+    max-height: 11in !important;
+    margin: 0 !important;
+    padding: 0.45in 0.55in 0.45in 0.55in !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .pdf-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  .doc-checkbox {
+    border-color: #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .expense-table th {
+    background-color: #f0f3f5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

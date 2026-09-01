@@ -81,7 +81,9 @@ The application requires **zero npm installs or build steps**. Choose any of the
 ### Method 2: One-Click Launch Scripts
 - **Windows**: Double-click `start-app.bat`
 - **macOS / Linux**: Run `bash start-app.sh`
+- 
 ###link after deployment
+
 diona-internship-git-main-yuktha1ga23is119-5153s-projects.vercel.app 
 ### Method 4: Node.js / NPX Serve
 ```bash

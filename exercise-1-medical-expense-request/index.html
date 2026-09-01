@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCB Manitoba - Exercise 1: Medical &amp; Travel Expense Request</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/document.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="app-icon">WCB</div>
+      <h1 class="brand-title">Exercise 1: Medical &amp; Travel Expense Request</h1>
+      <span class="badge-tag">Standalone Form</span>
+    </div>
+
+    <div class="toolbar-actions">
+      <!-- Dataset Presets Switcher -->
+      <div class="preset-group">
+        <label for="presetSelect" class="preset-label">Dataset Preset:</label>
+        <select id="presetSelect" class="select-control">
+          <option value="exactPdf" selected>Preset 1: Exact PDF Replica (2 Pages)</option>
+          <option value="stressTest">Preset 2: Multi-Page Stress Test (3+ Pages)</option>
+          <option value="minimal">Preset 3: Minimal Single-Item Case</option>
+        </select>
+      </div>
+
+      <!-- Zoom Controls -->
+      <div class="zoom-controls">
+        <button id="btnZoomOut" class="btn-zoom" title="Zoom Out">&minus;</button>
+        <span id="zoomLevelDisplay" class="zoom-level-text">100%</span>
+        <button id="btnZoomIn" class="btn-zoom" title="Zoom In">&plus;</button>
+        <button id="btnZoomReset" class="btn-zoom" title="Reset Zoom">Fit</button>
+      </div>
+
+      <!-- AI Assistant Button -->
+      <button id="btnOpenAI" class="btn btn-ai" title="AI Receipt OCR & Policy Auditor">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+        AI OCR &amp; Auditor
+      </button>
+
+      <!-- Editor Drawer Toggle Button -->
+      <button id="btnToggleEditor" class="btn btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        Edit Form Data
+      </button>
+
+      <!-- Print / Export to PDF Button -->
+      <button id="btnPrint" class="btn btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / Export PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Quick Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-group">
+      <div class="stat-item">
+        <span class="stat-label">Claimant:</span>
+        <span id="statClaimant" class="stat-val">Madeleine Willson</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Claim #:</span>
+        <span id="statClaimNo" class="stat-val">20042047</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Active Pages:</span>
+        <span id="statPageCount" class="stat-val">2 Pages</span>
+      </div>
+    </div>
+    <div class="stats-group">
+      <div class="stat-item">
+        <span class="stat-label">Total Expense Amount:</span>
+        <span id="statTotalExpense" class="stat-val stat-highlight">$66.00</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Worker App ID:</span>
+        <span id="statAppId" class="stat-val">712041</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Work Area -->
+  <main class="app-main">
+    <section class="preview-stage">
+      <div id="pageWrapperScale" class="page-wrapper-scale">
+        <div id="documentContainer" class="document-container">
+          <!-- Rendered PDF Sheets -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar Editor Drawer -->
+    <aside id="sidebarDrawer" class="sidebar-drawer collapsed">
+      <div class="drawer-header">
+        <h2 class="drawer-title">Expense Data Editor</h2>
+        <button id="btnCloseDrawer" class="btn-close-drawer">&times;</button>
+      </div>
+      <nav id="drawerNav" class="drawer-nav"></nav>
+      <div id="drawerContent" class="drawer-content"></div>
+    </aside>
+  </main>
+
+  <!-- AI Modal -->
+  <div id="aiAssistantModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">🤖 AI Receipt Parser &amp; Expense Auditor</div>
+        <button id="btnCloseAIModal" class="btn-modal-close">&times;</button>
+      </div>
+      <nav class="modal-nav">
+        <button class="modal-nav-btn active" data-tab="ocr"><span>📄 Receipt OCR Parser</span></button>
+        <button class="modal-nav-btn" data-tab="auditor"><span>🛡️ Policy Auditor</span></button>
+      </nav>
+      <div class="modal-body">
+        <div id="aiTabOcr" class="modal-tab-panel active">
+          <p style="font-size: 13px; color: #475569; margin-bottom: 10px;">Select a sample or paste receipt text:</p>
+          <div class="sample-chips-bar">
+            <button class="chip-btn" data-sample="rx">💊 Rx Receipt</button>
+            <button class="chip-btn" data-sample="otc">🩹 OTC Medicine</button>
+            <button class="chip-btn" data-sample="supplies">🩺 Lumbar Brace</button>
+            <button class="chip-btn" data-sample="parking">🅿️ Parking Meter</button>
+            <button class="chip-btn" data-sample="transit">🚕 Taxi Receipt</button>
+          </div>
+          <textarea id="aiOcrInput" class="ocr-textarea" placeholder="Paste receipt text here..."></textarea>
+          <button id="btnAiParseReceipt" class="btn btn-primary" style="width: 100%;">Extract &amp; Auto-Populate Claim</button>
+          <div id="aiOcrPreviewCard" class="ocr-preview-card" style="margin-top: 10px;">
+            <div id="aiOcrFieldsGrid" class="parsed-field-grid"></div>
+            <button id="btnAiApplyToClaim" class="btn btn-primary" style="width: 100%; margin-top: 8px;">✅ Add Line Item to Table</button>
+          </div>
+        </div>
+        <div id="aiTabAuditor" class="modal-tab-panel">
+          <button id="btnAiRunAudit" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">🔍 Scan Expenses for Policy Compliance</button>
+          <div id="aiAuditResultsList" class="audit-list"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseAIModalFooter" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastMsg" class="toast-msg"></div>
+
+  <!-- Scripts -->
+  <script src="../../js/data.js" onerror="this.src='js/data.js'"></script>
+  <script src="../../js/renderer-expense.js" onerror="this.src='js/renderer.js'"></script>
+  <script src="../../js/ai-assistant.js" onerror="this.src='js/ai-assistant.js'"></script>
+  <script src="../../js/app.js" onerror="this.src='js/app.js'"></script>
+</body>
+</html>

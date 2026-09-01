@@ -1,0 +1,3 @@
+@echo off
+echo Starting Exercise 1: Medical & Travel Expense Request...
+start index.html

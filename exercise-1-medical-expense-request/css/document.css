@@ -1,0 +1,515 @@
+/* ==========================================================================
+   DOCUMENT STYLES (Pixel-Perfect WCB Forms Engine)
+   Applies to both Expense Request (Ex 1) and Worker Progress Report (Ex 2)
+   ========================================================================== */
+
+/* Page Sheet Container (Standard Letter Dimensions: 8.5in x 11in) */
+.pdf-page {
+  width: 816px;
+  min-height: 1056px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin: 0 auto 32px auto;
+  padding: 38px 46px 40px 46px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Times New Roman', Times, Georgia, serif;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pdf-page:last-child {
+  margin-bottom: 0;
+}
+
+.doc-body {
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 12px;
+}
+
+.doc-header-left {
+  flex: 0 0 220px;
+}
+
+.wcb-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.wcb-logo-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.doc-header-center {
+  flex: 1 1 auto;
+  padding: 0 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #222222;
+}
+
+.doc-header-center p {
+  margin: 0 0 1px 0;
+}
+
+.doc-header-right {
+  flex: 0 0 230px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.doc-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.wp-title {
+  font-size: 17px;
+}
+
+/* Claim Number Box (Standard) */
+.claim-box {
+  border: 1.5px solid #111111;
+  padding: 4px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  display: inline-block;
+  background-color: #ffffff;
+}
+
+/* Split Claim Box for Worker Progress Report: [Claim No. 20042047 | WP] */
+.claim-box-split {
+  border: 1.5px solid #111111;
+  display: inline-flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+.claim-num-part {
+  padding: 4px 8px;
+}
+
+.claim-badge-part {
+  padding: 4px 8px;
+  border-left: 1.5px solid #111111;
+  background-color: #ffffff;
+}
+
+/* Claimant Intro Sentence */
+.claimant-intro {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   CHECKBOXES & FORM CONTROLS
+   ========================================================================== */
+.doc-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  border: 1.5px solid #111111;
+  background-color: #ffffff;
+  margin-right: 6px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.doc-checkbox.checked::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 8px;
+  border: solid #111111;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+/* Underlined Field Container with Sublabels */
+.underlined-field-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1.5px solid #111111;
+  padding: 0 4px;
+  min-width: 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.underlined-field-container.flex-grow {
+  flex: 1 1 auto;
+}
+
+.underlined-field-container.date-field {
+  min-width: 140px;
+}
+
+.underlined-field-container.date-field-md {
+  min-width: 130px;
+}
+
+.underlined-field-container.date-field-lg {
+  min-width: 180px;
+}
+
+.underlined-field-container.contact-field {
+  min-width: 190px;
+}
+
+.underlined-value {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13.5px;
+  color: #0b5871;
+  min-height: 16px;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+}
+
+.field-sublabel {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.5px;
+  color: #333333;
+  margin-top: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   EXERCISE 2: WORKER PROGRESS REPORT (WP) SPECIFIC STYLES
+   ========================================================================== */
+.wp-section {
+  margin-bottom: 14px;
+}
+
+.wp-section-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 6px;
+  color: #111111;
+}
+
+.wp-boxed-group {
+  border: 1.5px solid #111111;
+  padding: 6px 10px 8px 10px;
+  margin-bottom: 8px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.wp-boxed-group.single-line-box {
+  min-height: 48px;
+}
+
+.wp-boxed-group.multiline-box {
+  min-height: 68px;
+}
+
+.wp-group-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.wp-box-content-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13.5px;
+  color: #0b5871;
+  min-height: 18px;
+  line-height: 1.35;
+}
+
+.wp-options-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.wp-options-row.three-col {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.4fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.wp-options-row.four-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 6px;
+}
+
+.wp-options-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.wp-options-row.two-col.align-top {
+  align-items: flex-start;
+}
+
+.wp-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12.5px;
+  line-height: 1.2;
+  cursor: default;
+}
+
+.wp-inline-date-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wp-inline-row {
+  display: flex;
+  align-items: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.wp-inline-row.contact-row {
+  margin-top: 18px;
+}
+
+.wp-inline-treatment-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Pain Rating Grid 1-10 */
+.wp-pain-rating-block {
+  margin-bottom: 12px;
+}
+
+.wp-pain-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.wp-pain-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 20px;
+}
+
+.wp-pain-row {
+  display: flex;
+  gap: 32px;
+}
+
+.wp-pain-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  cursor: default;
+}
+
+/* Declarations Section (Page 3) */
+.wp-declarations-section {
+  padding-top: 10px;
+}
+
+.wp-declaration-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.wp-declaration-item .doc-checkbox {
+  margin-top: 3px;
+}
+
+.wp-declaration-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13.5px;
+  line-height: 1.42;
+  color: #111111;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   EXERCISE 1: MEDICAL & TRAVEL EXPENSE REQUEST SPECIFIC STYLES
+   ========================================================================== */
+.expense-section {
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 3px;
+}
+
+.section-note {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 11px;
+  font-style: italic;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+/* Strict Table Architecture */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 11.5px;
+  line-height: 1.2;
+}
+
+.expense-table th,
+.expense-table td {
+  border: 1px solid #111111;
+  padding: 4px 6px;
+  vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.expense-table th {
+  background-color: #f7f9fa;
+  font-weight: bold;
+  text-align: left;
+  font-size: 11px;
+}
+
+/* Exact Column Proportioning */
+.table-rx th:nth-child(1) { width: 22%; }
+.table-rx th:nth-child(2) { width: 22%; }
+.table-rx th:nth-child(3) { width: 20%; }
+.table-rx th:nth-child(4) { width: 24%; }
+.table-rx th:nth-child(5) { width: 12%; }
+
+.table-otc th:nth-child(1) { width: 20%; }
+.table-otc th:nth-child(2) { width: 18%; }
+.table-otc th:nth-child(3) { width: 14%; }
+.table-otc th:nth-child(4) { width: 24%; }
+.table-otc th:nth-child(5) { width: 24%; }
+
+.table-supplies th:nth-child(1) { width: 20%; }
+.table-supplies th:nth-child(2) { width: 15%; }
+.table-supplies th:nth-child(3) { width: 15%; }
+.table-supplies th:nth-child(4) { width: 20%; }
+.table-supplies th:nth-child(5) { width: 12%; }
+.table-supplies th:nth-child(6) { width: 18%; }
+
+.table-parking th:nth-child(1) { width: 38%; }
+.table-parking th:nth-child(2) { width: 16%; }
+.table-parking th:nth-child(3) { width: 14%; }
+.table-parking th:nth-child(4) { width: 14%; }
+.table-parking th:nth-child(5) { width: 18%; }
+
+.table-mileage th:nth-child(1) { width: 18%; }
+.table-mileage th:nth-child(2) { width: 34%; }
+.table-mileage th:nth-child(3) { width: 32%; }
+.table-mileage th:nth-child(4) { width: 16%; }
+
+.table-transit th:nth-child(1) { width: 18%; }
+.table-transit th:nth-child(2) { width: 28%; }
+.table-transit th:nth-child(3) { width: 32%; }
+.table-transit th:nth-child(4) { width: 11%; }
+.table-transit th:nth-child(5) { width: 11%; }
+
+/* Privacy Consent Block */
+.privacy-consent-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.privacy-consent-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+}
+
+.privacy-link {
+  color: #0b5871;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   PAGE FOOTER
+   ========================================================================== */
+.doc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11.5px;
+  color: #222222;
+  border-top: none;
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.doc-footer-left {
+  font-weight: normal;
+}
+
+.doc-footer-right {
+  text-align: right;
+}
+
+.doc-footer-page-num {
+  margin-top: 2px;
+  font-weight: normal;
+}

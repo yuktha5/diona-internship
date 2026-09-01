@@ -82,13 +82,7 @@ The application requires **zero npm installs or build steps**. Choose any of the
 - **Windows**: Double-click `start-app.bat`
 - **macOS / Linux**: Run `bash start-app.sh`
 
-### Method 3: Python Built-in HTTP Server
-```bash
-# In the project directory:
-python -m http.server 8000
-```
-Open [http://localhost:8000](http://localhost:8000) in your browser.
-
+diona-internship.vercel.app
 ### Method 4: Node.js / NPX Serve
 ```bash
 # In the project directory:

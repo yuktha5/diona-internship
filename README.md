@@ -16,7 +16,7 @@ A high-fidelity, dynamic web application engineered with pure **HTML5, CSS3, and
 7. [🎥 Video Hub & Webcam Video Check-in Recorder](#-video-hub--webcam-video-check-in-recorder)
 8. [Dynamic Data & Multi-Dataset Demonstrations](#-dynamic-data--multi-dataset-demonstrations)
 9. [Architecture & Project Structure](#-architecture--project-structure)
-
+10. [Repository Information](#-repository-information)
 
 ---
 
@@ -161,34 +161,55 @@ The top **Dataset Preset** dropdown provides instant switching between test case
 
 ## 🏗 Architecture & Project Structure
 
+The repository is structured to provide both a **Unified All-in-One Suite** (with instant tab switching between Exercise 1 & 2) and **Dedicated Standalone Folders** for each exercise:
+
 ```
 wcb-expense-pdf-app/
-├── index.html              # Main application shell & UI controls
-├── start-app.bat           # One-click Windows launch script
-├── start-app.sh            # One-click Mac/Linux launch script
-├── .gitignore              # Git ignore configuration
-├── css/
-│   ├── styles.css          # Application layout, toolbar, drawer, and buttons
-│   ├── document.css        # Pixel-perfect WCB document layout & typography
-│   ├── modals.css          # AI Assistant, Video Hub, and Stats bar styling
-│   └── print.css           # Strict @media print CSS for Letter PDF output
-├── js/
-│   ├── data.js             # Data schemas and multi-dataset presets
-│   ├── renderer-expense.js # Exercise 1 (Medical & Travel Expenses) renderer
-│   ├── renderer-progress.js# Exercise 2 (Worker Progress Report) renderer
-│   ├── ai-assistant.js     # AI OCR parser, summarizer, auditor, and chatbot
-│   ├── video-hub.js        # Video demo player and webcam video recorder
-│   └── app.js              # Application state controller and two-way sync
-├── README.md               # Comprehensive documentation
-├── VIDEO_SCRIPT.md         # 2-Minute narrated presentation script
-└── PROMPT_HISTORY.md       # AI prompt and development history log
+├── index.html                           # Unified Suite (Exercise 1 & 2 switcher + AI + Video Hub)
+├── start-app.bat                        # One-click Windows launch script
+├── start-app.sh                         # One-click Mac/Linux launch script
+├── .gitignore                           # Git ignore configuration
+│
+├── css/                                 # Shared style architecture
+│   ├── styles.css                       # Application layout, toolbar, drawer, and navigation
+│   ├── document.css                     # Pixel-perfect WCB document layout & typography
+│   ├── modals.css                       # AI Assistant, Video Hub, and Stats modal styling
+│   └── print.css                        # Strict @media print CSS for Letter PDF output
+│
+├── js/                                  # Modular JavaScript engines (ES6+)
+│   ├── data.js                          # Multi-dataset presets (Exact Replica, Stress Test, Minimal)
+│   ├── renderer-expense.js              # Exercise 1 dynamic rendering & pagination engine
+│   ├── renderer-progress.js             # Exercise 2 dynamic rendering & pagination engine
+│   ├── ai-assistant.js                  # AI OCR receipt parser, clinical summarizer, auditor, chatbot
+│   ├── video-hub.js                     # Video demo player and webcam video check-in recorder
+│   └── app.js                           # State controller, two-way data sync, live recalculation
+│
+├── exercise-1-medical-expense-request/  # Standalone Exercise 1 project folder
+│   ├── index.html                       # Standalone Exercise 1 HTML app
+│   ├── start.bat                        # Standalone 1-click launcher
+│   ├── README.md                        # Exercise 1 documentation
+│   ├── css/                             # Exercise 1 specific styles
+│   └── js/                              # Exercise 1 specific scripts
+│
+├── exercise-2-worker-progress-report/   # Standalone Exercise 2 project folder
+│   ├── index.html                       # Standalone Exercise 2 HTML app
+│   ├── start.bat                        # Standalone 1-click launcher
+│   ├── README.md                        # Exercise 2 documentation
+│   ├── css/                             # Exercise 2 specific styles
+│   └── js/                              # Exercise 2 specific scripts
+│
+├── README.md                            # Comprehensive documentation
+├── VIDEO_SCRIPT.md                      # 2-Minute narrated presentation script (with PiP guide)
+└── PROMPT_HISTORY.md                    # AI prompt and development history log
 ```
 
 ---
 
+## 🔗 Repository Information
 
-
-
+- **GitHub Repository**: [https://github.com/yuktha5/diona-internship.git](https://github.com/yuktha5/diona-internship.git)
+- **Tech Stack**: HTML5, CSS3, Modern Vanilla JavaScript (ES6+)
+- **Prerequisites**: None (Runs directly in any modern browser without npm/build dependencies)
 
 ---
 

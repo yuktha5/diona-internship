@@ -80,19 +80,23 @@ The application requires **zero npm installs or build steps**. Choose any of the
 
 ### Method 2: One-Click Launch Scripts
 - **Windows**: Double-click `start-app.bat`
-- **macOS / Linux**: Run `bash start-app.sh`
-- 
-###link after deployment
+- **macOS / Linux**: Run ```bash start-app.sh`
+### Method 3: Live Vercel Deployment
+- **Live Application Demo**: [https://diona-internship-git-main-yuktha1ga23is119-5153s-projects.vercel.app](https://diona-internship-git-main-yuktha1ga23is119-5153s-projects.vercel.app)
 
-diona-internship-git-main-yuktha1ga23is119-5153s-projects.vercel.app 
 ### Method 4: Node.js / NPX Serve
 ```bash
 # In the project directory:
 npx -y serve -l 3000 .
 ```
-Openfile:/// C:/Users/hp/Desktop/6%20sem/Worker%20Progress%20Report%20dia.pdf 
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-in your browser.
+### Method 5: Python Built-in HTTP Server
+```bash
+# In the project directory:
+python -m http.server 8000
+```
+Open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ### Method 5: VS Code Live Server
 Right-click `index.html` inside VS Code and select **Open with Live Server**.
